@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento Financeiro - Licenças Qilbee CNSesi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .document-info {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section {
+            margin: 40px 0;
+        }
+
+        .section h2 {
+            color: #34495e;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            border-left: 5px solid #3498db;
+            padding-left: 20px;
+        }
+
+        .section h3 {
+            color: #2980b9;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+
+        .financial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .metric-card h4 {
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .metric-card .value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 5px;
+        }
+
+        .metric-card .negative {
+            color: #e74c3c;
+        }
+
+        .metric-card .description {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        .analysis-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .analysis-table th,
+        .analysis-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .analysis-table th {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: white;
+            font-weight: bold;
+        }
+
+        .analysis-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .analysis-table tr:hover {
+            background-color: #e8f4fd;
+        }
+
+        .cost-breakdown {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .cost-breakdown h4 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            height: 20px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .revenue { background: #27ae60; }
+        .taxes { background: #e74c3c; }
+        .infrastructure { background: #f39c12; }
+        .labor { background: #3498db; }
+        .profit { background: #8e44ad; }
+
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .risk-item {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .risk-high { border-color: #e53e3e; }
+        .risk-medium { border-color: #dd6b20; background: #fffaf0; }
+        .risk-low { border-color: #38a169; background: #f0fff4; }
+
+        .assumptions {
+            background: #e8f4fd;
+            border: 1px solid #bee3f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .assumptions h4 {
+            color: #2b6cb0;
+            margin-bottom: 15px;
+        }
+
+        .assumptions ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .assumptions li {
+            margin-bottom: 8px;
+        }
+
+        .monthly-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .month-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .month-card h5 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .alert-box {
+            background: #fed7d7;
+            border: 1px solid #feb2b2;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .alert-box h4 {
+            color: #c53030;
+            margin-bottom: 10px;
+        }
+
+        .sensitivity-analysis {
+            background: #f7fafc;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <div class="header">
+            <h1>PLANEJAMENTO FINANCEIRO ANALÍTICO</h1>
+            <div class="subtitle">Licenciamento Qilbee - Cliente CNSesi</div>
+            <div class="document-info">
+                <div><strong>Data do Documento:</strong> 30 de Abril de 2025</div>
+                <div><strong>Análise:</strong> Time Financeiro Qilbee</div>
+                <div><strong>Período:</strong> Contrato Anual</div>
+            </div>
+        </div>
+
+        <!-- Resumo Executivo Financeiro -->
+        <div class="section">
+            <h2>1. Resumo Executivo Financeiro</h2>
+            
+            <div class="financial-grid">
+                <div class="metric-card">
+                    <h4>Receita Bruta Total</h4>
+                    <div class="value">US$ 350.000</div>
+                    <div class="description">500 licenças × US$ 700</div>
+                </div>
+                
+                <div class="metric-card">
+                    <h4>Impostos Totais</h4>
+                    <div class="value negative">-US$ 56.000</div>
+                    <div class="description">16% sobre receita bruta</div>
+                </div>
+                
+                <div class="metric-card">
+                    <h4>Custos Operacionais</h4>
+                    <div class="value negative">-US$ 213.500</div>
+                    <div class="description">Infraestrutura + Mão de Obra</div>
+                </div>
+                
+                <div class="metric-card">
+                    <h4>Lucro Líquido</h4>
+                    <div class="value">US$ 80.500</div>
+                    <div class="description">23% de margem líquida</div>
+                </div>
+            </div>
+
+            <div style="margin: 30px 0;">
+                <h4>Distribuição de Receita:</h4>
+                <div class="progress-bar">
+                    <div class="progress-fill revenue" style="width: 23%;">Lucro 23%</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill taxes" style="width: 16%;">Impostos 16%</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill infrastructure" style="width: 25.4%;">Infraestrutura 25.4%</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill labor" style="width: 35.6%;">Mão de Obra 35.6%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Análise Detalhada de Custos -->
+        <div class="section">
+            <h2>2. Análise Detalhada de Custos</h2>
+            
+            <table class="analysis-table">
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Valor Mensal (US$)</th>
+                        <th>% da Receita</th>
+                        <th>% dos Custos</th>
+                        <th>Justificativa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #d4edda;">
+                        <td><strong>Receita Bruta</strong></td>
+                        <td><strong>350.000</strong></td>
+                        <td><strong>100%</strong></td>
+                        <td><strong>-</strong></td>
+                        <td>500 licenças × US$ 700</td>
+                    </tr>
+                    <tr>
+                        <td>Impostos Federais/Estaduais</td>
+                        <td>56.000</td>
+                        <td>16.0%</td>
+                        <td>-</td>
+                        <td>Tributos obrigatórios sobre receita</td>
+                    </tr>
+                    <tr>
+                        <td>Infraestrutura AWS</td>
+                        <td>89.000</td>
+                        <td>25.4%</td>
+                        <td>41.7%</td>
+                        <td>Cloud computing, databases, GPU, K8s</td>
+                    </tr>
+                    <tr>
+                        <td>Mão de Obra</td>
+                        <td>124.500</td>
+                        <td>35.6%</td>
+                        <td>58.3%</td>
+                        <td>Desenvolvimento, DevOps, Suporte</td>
+                    </tr>
+                    <tr style="background-color: #fff3cd;">
+                        <td><strong>Total de Custos</strong></td>
+                        <td><strong>269.500</strong></td>
+                        <td><strong>77.0%</strong></td>
+                        <td><strong>100%</strong></td>
+                        <td>Custos operacionais + impostos</td>
+                    </tr>
+                    <tr style="background-color: #d1ecf1;">
+                        <td><strong>Lucro Líquido</strong></td>
+                        <td><strong>80.500</strong></td>
+                        <td><strong>23.0%</strong></td>
+                        <td><strong>-</strong></td>
+                        <td>Margem final do projeto</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Detalhamento da Infraestrutura AWS -->
+        <div class="section">
+            <h2>3. Detalhamento da Infraestrutura AWS - US$ 89.000</h2>
+            
+            <table class="analysis-table">
+                <thead>
+                    <tr>
+                        <th>Serviço AWS</th>
+                        <th>Custo Mensal (US$)</th>
+                        <th>% Infra</th>
+                        <th>Especificação Técnica</th>
+                        <th>Justificativa de Custo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>EC2 Instances (GPU)</td>
+                        <td>32.000</td>
+                        <td>36.0%</td>
+                        <td>8x p3.8xlarge (32 vCPUs, 4 V100 GPUs)</td>
+                        <td>Processamento ML/AI para 500 licenças simultâneas</td>
+                    </tr>
+                    <tr>
+                        <td>RDS (Multi-AZ)</td>
+                        <td>12.500</td>
+                        <td>14.0%</td>
+                        <td>db.r5.4xlarge (16 vCPUs, 128GB RAM)</td>
+                        <td>Alta disponibilidade, backup automático</td>
+                    </tr>
+                    <tr>
+                        <td>EKS Cluster + Nodes</td>
+                        <td>15.000</td>
+                        <td>16.9%</td>
+                        <td>3 masters + 12 worker nodes (c5.2xlarge)</td>
+                        <td>Orquestração de containers, auto-scaling</td>
+                    </tr>
+                    <tr>
+                        <td>DynamoDB</td>
+                        <td>8.000</td>
+                        <td>9.0%</td>
+                        <td>On-demand, Global Tables</td>
+                        <td>NoSQL para sessões e cache distribuído</td>
+                    </tr>
+                    <tr>
+                        <td>ElastiCache Redis</td>
+                        <td>5.500</td>
+                        <td>6.2%</td>
+                        <td>cache.r6g.2xlarge cluster</td>
+                        <td>Cache em memória para performance</td>
+                    </tr>
+                    <tr>
+                        <td>Load Balancer + CloudFront</td>
+                        <td>4.000</td>
+                        <td>4.5%</td>
+                        <td>ALB + CDN global</td>
+                        <td>Distribuição de tráfego e latência</td>
+                    </tr>
+                    <tr>
+                        <td>S3 Storage + Glacier</td>
+                        <td>3.500</td>
+                        <td>3.9%</td>
+                        <td>500TB S3 Standard + archiving</td>
+                        <td>Armazenamento de dados e backups</td>
+                    </tr>
+                    <tr>
+                        <td>CloudWatch + X-Ray</td>
+                        <td>2.500</td>
+                        <td>2.8%</td>
+                        <td>Monitoramento completo</td>
+                        <td>Observabilidade e alertas</td>
+                    </tr>
+                    <tr>
+                        <td>VPC + NAT + Security</td>
+                        <td>3.000</td>
+                        <td>3.4%</td>
+                        <td>Multi-AZ, WAF, Shield</td>
+                        <td>Rede privada e segurança</td>
+                    </tr>
+                    <tr>
+                        <td>Data Transfer + Misc</td>
+                        <td>3.000</td>
+                        <td>3.4%</td>
+                        <td>Outbound data transfer</td>
+                        <td>Tráfego de dados e serviços extras</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="cost-breakdown">
+                <h4>💡 Análise de Custo de Infraestrutura:</h4>
+                <ul>
+                    <li><strong>GPU Computing (36%):</strong> Maior componente devido ao processamento intensivo de AI/ML</li>
+                    <li><strong>Kubernetes (17%):</strong> Orquestração necessária para escalar 500 licenças</li>
+                    <li><strong>Databases (23%):</strong> RDS + DynamoDB para diferentes tipos de dados</li>
+                    <li><strong>Cache & Performance (10%):</strong> ElastiCache + CDN para otimização</li>
+                    <li><strong>Segurança & Monitoramento (14%):</strong> Observabilidade e proteção</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Detalhamento de Mão de Obra -->
+        <div class="section">
+            <h2>4. Detalhamento de Mão de Obra - US$ 124.500</h2>
+            
+            <table class="analysis-table">
+                <thead>
+                    <tr>
+                        <th>Função/Nível</th>
+                        <th>FTEs</th>
+                        <th>Salário Base (US$)</th>
+                        <th>Encargos (35%)</th>
+                        <th>Total Mensal</th>
+                        <th>% Equipe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Arquiteto de Software Sênior</td>
+                        <td>1.0</td>
+                        <td>12.000</td>
+                        <td>4.200</td>
+                        <td>16.200</td>
+                        <td>13.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Engenheiro Sênior (Backend)</td>
+                        <td>2.0</td>
+                        <td>18.000</td>
+                        <td>6.300</td>
+                        <td>24.300</td>
+                        <td>19.5%</td>
+                    </tr>
+                    <tr>
+                        <td>Engenheiro Sênior (Frontend)</td>
+                        <td>1.5</td>
+                        <td>13.500</td>
+                        <td>4.725</td>
+                        <td>18.225</td>
+                        <td>14.6%</td>
+                    </tr>
+                    <tr>
+                        <td>DevOps Engineer Sênior</td>
+                        <td>1.5</td>
+                        <td>13.500</td>
+                        <td>4.725</td>
+                        <td>18.225</td>
+                        <td>14.6%</td>
+                    </tr>
+                    <tr>
+                        <td>Especialista em ML/AI</td>
+                        <td>1.0</td>
+                        <td>11.000</td>
+                        <td>3.850</td>
+                        <td>14.850</td>
+                        <td>11.9%</td>
+                    </tr>
+                    <tr>
+                        <td>Analista de Suporte Sênior</td>
+                        <td>2.0</td>
+                        <td>12.000</td>
+                        <td>4.200</td>
+                        <td>16.200</td>
+                        <td>13.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Gerente de Projeto</td>
+                        <td>0.5</td>
+                        <td>6.000</td>
+                        <td>2.100</td>
+                        <td>8.100</td>
+                        <td>6.5%</td>
+                    </tr>
+                    <tr>
+                        <td>QA Engineer</td>
+                        <td>1.0</td>
+                        <td>6.500</td>
+                        <td>2.275</td>
+                        <td>8.775</td>
+                        <td>7.0%</td>
+                    </tr>
+                    <tr style="background-color: #f0f9ff;">
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>10.5</strong></td>
+                        <td><strong>92.500</strong></td>
+                        <td><strong>32.375</strong></td>
+                        <td><strong>124.875</strong></td>
+                        <td><strong>100%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="monthly-breakdown">
+                <div class="month-card">
+                    <h5>📊 Distribuição por Área</h5>
+                    <ul>
+                        <li><strong>Desenvolvimento:</strong> 47.4% (US$ 59.175)</li>
+                        <li><strong>DevOps/Infra:</strong> 14.6% (US$ 18.225)</li>
+                        <li><strong>ML/AI:</strong> 11.9% (US$ 14.850)</li>
+                        <li><strong>Suporte:</strong> 13.0% (US$ 16.200)</li>
+                        <li><strong>Gestão/QA:</strong> 13.5% (US$ 16.875)</li>
+                    </ul>
+                </div>
+                
+                <div class="month-card">
+                    <h5>⏰ Alocação de Tempo</h5>
+                    <ul>
+                        <li><strong>Desenvolvimento Inicial:</strong> 40%</li>
+                        <li><strong>Manutenção/Suporte:</strong> 35%</li>
+                        <li><strong>Melhorias/Features:</strong> 15%</li>
+                        <li><strong>Monitoramento/DevOps:</strong> 10%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Análise de Sensibilidade -->
+        <div class="section">
+            <h2>5. Análise de Sensibilidade</h2>
+            
+            <div class="sensitivity-analysis">
+                <h3>Cenários de Variação de Custos</h3>
+                
+                <table class="analysis-table">
+                    <thead>
+                        <tr>
+                            <th>Cenário</th>
+                            <th>Variação Infra</th>
+                            <th>Variação RH</th>
+                            <th>Novo Lucro</th>
+                            <th>Nova Margem</th>
+                            <th>Impacto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #d4edda;">
+                            <td><strong>Base</strong></td>
+                            <td>US$ 89.000</td>
+                            <td>US$ 124.500</td>
+                            <td>US$ 80.500</td>
+                            <td>23.0%</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Otimista (-10% custos)</td>
+                            <td>US$ 80.100</td>
+                            <td>US$ 112.050</td>
+                            <td>US$ 101.850</td>
+                            <td>29.1%</td>
+                            <td>+US$ 21.350</td>
+                        </tr>
+                        <tr>
+                            <td>Conservador (+15% custos)</td>
+                            <td>US$ 102.350</td>
+                            <td>US$ 143.175</td>
+                            <td>US$ 48.475</td>
+                            <td>13.9%</td>
+                            <td>-US$ 32.025</td>
+                        </tr>
+                        <tr style="background-color: #fed7d7;">
+                            <td>Pessimista (+25% custos)</td>
+                            <td>US$ 111.250</td>
+                            <td>US$ 155.625</td>
+                            <td>US$ 27.125</td>
+                            <td>7.7%</td>
+                            <td>-US$ 53.375</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="alert-box">
+                <h4>⚠️ Ponto de Atenção Crítico</h4>
+                <p>Com aumento de 25% nos custos, a margem cai para 7.7%, abaixo do target mínimo de 15%. 
+                Recomenda-se estabelecer controles rígidos de custo e cláusulas de reajuste no contrato.</p>
+            </div>
+        </div>
+
+        <!-- Análise de Riscos -->
+        <div class="section">
+            <h2>6. Análise de Riscos Financeiros</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-item risk-high">
+                    <h4>🔴 ALTO RISCO</h4>
+                    <p><strong>Custos AWS Variáveis</strong></p>
+                    <p>Uso de GPU pode exceder previsões em 20-40% dependendo da demanda real das 500 licenças.</p>
+                    <p><em>Mitigação:</em> Reserved Instances, monitoramento rigoroso</p>
+                </div>
+                
+                <div class="risk-item risk-high">
+                    <h4>🔴 ALTO RISCO</h4>
+                    <p><strong>Rotatividade de RH</strong></p>
+                    <p>Mercado aquecido pode causar turnover de 15-25%, aumentando custos de contratação.</p>
+                    <p><em>Mitigação:</em> Retenção via equity, benefícios</p>
+                </div>
+                
+                <div class="risk-item risk-medium">
+                    <h4>🟡 MÉDIO RISCO</h4>
+                    <p><strong>Escalabilidade Técnica</strong></p>
+                    <p>Arquitetura pode precisar refatoração para suportar crescimento além de 500 usuários.</p>
+                    <p><em>Mitigação:</em> Arquitetura cloud-native desde o início</p>
+                </div>
+                
+                <div class="risk-item risk-medium">
+                    <h4>🟡 MÉDIO RISCO</h4>
+                    <p><strong>Flutuação Cambial</strong></p>
+                    <p>Custos em USD vs receita potencial em BRL podem gerar variação de ±10%.</p>
+                    <p><em>Mitigação:</em> Hedge cambial, cláusula de reajuste</p>
+                </div>
+                
+                <div class="risk-item risk-low">
+                    <h4>🟢 BAIXO RISCO</h4>
+                    <p><strong>Impostos</strong></p>
+                    <p>16% é bem definido e estável para este tipo de operação.</p>
+                    <p><em>Monitoramento:</em> Acompanhar mudanças tributárias</p>
+                </div>
+                
+                <div class="risk-item risk-low">
+                    <h4>🟢 BAIXO RISCO</h4>
+                    <p><strong>Receita Base</strong></p>
+                    <p>Contrato firmado garante receita de US$ 350.000.</p>
+                    <p><em>Atenção:</em> Cláusulas de SLA e penalidades</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recomendações Financeiras -->
+        <div class="section">
+            <h2>7. Recomendações do Time Financeiro</h2>
+            
+            <div class="assumptions">
+                <h4>📋 Controles Financeiros Recomendados</h4>
+                <ul>
+                    <li><strong>Budget Mensal:</strong> Estabelecer limite de US$ 95.000 para infraestrutura (6.7% buffer)</li>
+                    <li><strong>Revisão Trimestral:</strong> Análise de performance de custos vs receita</li>
+                    <li><strong>Reserved Instances:</strong> Compromisso de 1-3 anos para reduzir custos AWS em 30-50%</li>
+                    <li><strong>Monitoramento Diário:</strong> Dashboards de custo em tempo real</li>
+                    <li><strong>Aprovação para Scaling:</strong> Qualquer aumento >10% precisa aprovação financeira</li>
+                    <li><strong>Backup Fund:</strong> Reserve de US$ 25.000 para contingências (25% do lucro)</li>
+                </ul>
+            </div>
+
+            <div class="assumptions">
+                <h4>🎯 KPIs Financeiros Críticos</h4>
+                <ul>
+                    <li><strong>Margem Líquida:</strong> Manter ≥ 20% (atual: 23%)</li>
+                    <li><strong>Custo por Licença:</strong> ≤ US$ 427 (atual: US$ 427)</li>
+                    <li><strong>ROI Infraestrutura:</strong> Utilização ≥ 75% dos recursos AWS</li>
+                    <li><strong>Produtividade RH:</strong> Revenue per Employee ≥ US$ 33.333</li>
+                    <li><strong>Burn Rate Mensal:</strong> ≤ US$ 213.500 em custos operacionais</li>
+                </ul>
+            </div>
+
+            <div class="cost-breakdown">
+                <h4>✅ Aprovação Condicional</h4>
+                <p><strong>Status:</strong> Projeto aprovado mediante implementação dos controles sugeridos</p>
+                <p><strong>Break-even:</strong> Projeto se paga em 2.6 meses (213.500 ÷ 80.500)</p>
+                <p><strong>Payback Period:</strong> ROI positivo garantido no 3º mês</p>
+            </div>
+        </div>
+
+        <!-- Cronograma Financeiro -->
+        <div class="section">
+            <h2>8. Cronograma de Desembolso</h2>
+            
+            <table class="analysis-table">
+                <thead>
+                    <tr>
+                        <th>Mês</th>
+                        <th>Receita</th>
+                        <th>Infraestrutura</th>
+                        <th>RH</th>
+                        <th>Impostos</th>
+                        <th>Fluxo Mensal</th>
+                        <th>Acumulado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Setup (Mês 0)</td>
+                        <td>0</td>
+                        <td>-15.000</td>
+                        <td>-25.000</td>
+                        <td>0</td>
+                        <td>-40.000</td>
+                        <td>-40.000</td>
+                    </tr>
+                    <tr>
+                        <td>Mês 1</td>
+                        <td>350.000</td>
+                        <td>-89.000</td>
+                        <td>-124.500</td>
+                        <td>-56.000</td>
+                        <td>80.500</td>
+                        <td>40.500</td>
+                    </tr>
+                    <tr>
+                        <td>Manutenção (Mês 2+)</td>
+                        <td>0</td>
+                        <td>-65.000</td>
+                        <td>-95.000</td>
+                        <td>0</td>
+                        <td>-160.000</td>
+                        <td>Custo recorrente</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert-box">
+                <h4>💰 Resumo do Fluxo de Caixa</h4>
+                <p><strong>Investimento Inicial:</strong> US$ 40.000 (setup + ramp-up)</p>
+                <p><strong>Receita Líquida Ano 1:</strong> US$ 80.500</p>
+                <p><strong>ROI Anual:</strong> 201% (80.500 ÷ 40.000)</p>
+                <p><strong>Margem de Segurança:</strong> Projeto rentável mesmo com 35% de aumento de custos</p>
+            </div>
+        </div>
+
+        <!-- Assinaturas -->
+        <div style="margin-top: 60px; border-top: 2px solid #3498db; padding-top: 30px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div style="text-align: center;">
+                    <div style="border-bottom: 1px solid #ccc; margin-bottom: 10px; padding-bottom: 50px;"></div>
+                    <p><strong>CFO - Aprovação Financeira</strong></p>
+                    <p>Data: 30/04/2025</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="border-bottom: 1px solid #ccc; margin-bottom: 10px; padding-bottom: 50px;"></div>
+                    <p><strong>Diretor Comercial</strong></p>
+                    <p>Data: 30/04/2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
