@@ -276,7 +276,7 @@
             <div class="document-info">
                 <div><strong>Data do Documento:</strong> 30 de Abril de 2025</div>
                 <div><strong>Análise:</strong> Time Financeiro Qilbee</div>
-                <div><strong>Período:</strong> Contrato Anual</div>
+                <div><strong>Período:</strong> Contrato 12 Meses (Valores Mensais Recorrentes)</div>
             </div>
         </div>
 
@@ -286,27 +286,53 @@
             
             <div class="financial-grid">
                 <div class="metric-card">
-                    <h4>Receita Bruta Total</h4>
+                    <h4>Receita Mensal</h4>
                     <div class="value">US$ 350.000</div>
-                    <div class="description">500 licenças × US$ 700</div>
+                    <div class="description">500 licenças × US$ 700/mês</div>
                 </div>
                 
                 <div class="metric-card">
-                    <h4>Impostos Totais</h4>
-                    <div class="value negative">-US$ 56.000</div>
-                    <div class="description">16% sobre receita bruta</div>
+                    <h4>Receita Total (12 meses)</h4>
+                    <div class="value">US$ 4.200.000</div>
+                    <div class="description">US$ 350.000 × 12 meses</div>
                 </div>
                 
                 <div class="metric-card">
-                    <h4>Custos Operacionais</h4>
-                    <div class="value negative">-US$ 213.500</div>
-                    <div class="description">Infraestrutura + Mão de Obra</div>
+                    <h4>Custos Mensais</h4>
+                    <div class="value negative">-US$ 269.500</div>
+                    <div class="description">Infra + RH + Impostos</div>
                 </div>
                 
                 <div class="metric-card">
-                    <h4>Lucro Líquido</h4>
+                    <h4>Lucro Mensal</h4>
                     <div class="value">US$ 80.500</div>
                     <div class="description">23% de margem líquida</div>
+                </div>
+            </div>
+
+            <div class="financial-grid" style="margin-top: 30px;">
+                <div class="metric-card" style="border-left-color: #27ae60;">
+                    <h4>Custos Totais (12 meses)</h4>
+                    <div class="value negative">-US$ 3.234.000</div>
+                    <div class="description">US$ 269.500 × 12 meses</div>
+                </div>
+                
+                <div class="metric-card" style="border-left-color: #27ae60;">
+                    <h4>Lucro Total (12 meses)</h4>
+                    <div class="value" style="color: #27ae60;">US$ 966.000</div>
+                    <div class="description">US$ 80.500 × 12 meses</div>
+                </div>
+                
+                <div class="metric-card" style="border-left-color: #8e44ad;">
+                    <h4>ROI Anual</h4>
+                    <div class="value" style="color: #8e44ad;">298%</div>
+                    <div class="description">Retorno sobre investimento</div>
+                </div>
+                
+                <div class="metric-card" style="border-left-color: #e67e22;">
+                    <h4>Payback Period</h4>
+                    <div class="value" style="color: #e67e22;">1.2 mês</div>
+                    <div class="description">Recuperação do investimento</div>
                 </div>
             </div>
 
@@ -336,8 +362,8 @@
                     <tr>
                         <th>Categoria</th>
                         <th>Valor Mensal (US$)</th>
+                        <th>Valor Anual (US$)</th>
                         <th>% da Receita</th>
-                        <th>% dos Custos</th>
                         <th>Justificativa</th>
                     </tr>
                 </thead>
@@ -345,44 +371,44 @@
                     <tr style="background-color: #d4edda;">
                         <td><strong>Receita Bruta</strong></td>
                         <td><strong>350.000</strong></td>
+                        <td><strong>4.200.000</strong></td>
                         <td><strong>100%</strong></td>
-                        <td><strong>-</strong></td>
-                        <td>500 licenças × US$ 700</td>
+                        <td>500 licenças × US$ 700/mês</td>
                     </tr>
                     <tr>
                         <td>Impostos Federais/Estaduais</td>
                         <td>56.000</td>
+                        <td>672.000</td>
                         <td>16.0%</td>
-                        <td>-</td>
                         <td>Tributos obrigatórios sobre receita</td>
                     </tr>
                     <tr>
                         <td>Infraestrutura AWS</td>
                         <td>89.000</td>
+                        <td>1.068.000</td>
                         <td>25.4%</td>
-                        <td>41.7%</td>
                         <td>Cloud computing, databases, GPU, K8s</td>
                     </tr>
                     <tr>
                         <td>Mão de Obra</td>
                         <td>124.500</td>
+                        <td>1.494.000</td>
                         <td>35.6%</td>
-                        <td>58.3%</td>
                         <td>Desenvolvimento, DevOps, Suporte</td>
                     </tr>
                     <tr style="background-color: #fff3cd;">
                         <td><strong>Total de Custos</strong></td>
                         <td><strong>269.500</strong></td>
+                        <td><strong>3.234.000</strong></td>
                         <td><strong>77.0%</strong></td>
-                        <td><strong>100%</strong></td>
                         <td>Custos operacionais + impostos</td>
                     </tr>
                     <tr style="background-color: #d1ecf1;">
                         <td><strong>Lucro Líquido</strong></td>
                         <td><strong>80.500</strong></td>
+                        <td><strong>966.000</strong></td>
                         <td><strong>23.0%</strong></td>
-                        <td><strong>-</strong></td>
-                        <td>Margem final do projeto</td>
+                        <td>Margem final do contrato</td>
                     </tr>
                 </tbody>
             </table>
@@ -751,57 +777,80 @@
 
         <!-- Cronograma Financeiro -->
         <div class="section">
-            <h2>8. Cronograma de Desembolso</h2>
+            <h2>8. Cronograma de Desembolso - Contrato 12 Meses</h2>
             
             <table class="analysis-table">
                 <thead>
                     <tr>
-                        <th>Mês</th>
-                        <th>Receita</th>
-                        <th>Infraestrutura</th>
-                        <th>RH</th>
-                        <th>Impostos</th>
-                        <th>Fluxo Mensal</th>
-                        <th>Acumulado</th>
+                        <th>Período</th>
+                        <th>Receita (US$)</th>
+                        <th>Infraestrutura (US$)</th>
+                        <th>RH (US$)</th>
+                        <th>Impostos (US$)</th>
+                        <th>Fluxo Mensal (US$)</th>
+                        <th>Acumulado (US$)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Setup (Mês 0)</td>
                         <td>0</td>
-                        <td>-15.000</td>
-                        <td>-25.000</td>
+                        <td>-45.000</td>
+                        <td>-60.000</td>
                         <td>0</td>
-                        <td>-40.000</td>
-                        <td>-40.000</td>
+                        <td>-105.000</td>
+                        <td>-105.000</td>
                     </tr>
                     <tr>
-                        <td>Mês 1</td>
+                        <td>Mês 1-12 (cada mês)</td>
                         <td>350.000</td>
                         <td>-89.000</td>
                         <td>-124.500</td>
                         <td>-56.000</td>
                         <td>80.500</td>
-                        <td>40.500</td>
+                        <td>Crescente</td>
                     </tr>
-                    <tr>
-                        <td>Manutenção (Mês 2+)</td>
-                        <td>0</td>
-                        <td>-65.000</td>
-                        <td>-95.000</td>
-                        <td>0</td>
-                        <td>-160.000</td>
-                        <td>Custo recorrente</td>
+                    <tr style="background-color: #e8f5e8;">
+                        <td><strong>Total 12 Meses</strong></td>
+                        <td><strong>4.200.000</strong></td>
+                        <td><strong>-1.068.000</strong></td>
+                        <td><strong>-1.494.000</strong></td>
+                        <td><strong>-672.000</strong></td>
+                        <td><strong>966.000</strong></td>
+                        <td><strong>861.000</strong></td>
                     </tr>
                 </tbody>
             </table>
 
+            <div class="monthly-breakdown">
+                <div class="month-card">
+                    <h5>📊 Fluxo de Caixa Progressivo</h5>
+                    <ul>
+                        <li><strong>Mês 1:</strong> US$ -24.500 (recupera setup)</li>
+                        <li><strong>Mês 2:</strong> US$ 56.000 (break-even)</li>
+                        <li><strong>Mês 6:</strong> US$ 378.000 acumulado</li>
+                        <li><strong>Mês 12:</strong> US$ 861.000 acumulado</li>
+                    </ul>
+                </div>
+                
+                <div class="month-card">
+                    <h5>💰 Métricas Financeiras</h5>
+                    <ul>
+                        <li><strong>Break-even:</strong> 1.3 mês</li>
+                        <li><strong>ROI 12 meses:</strong> 820%</li>
+                        <li><strong>Margem Média:</strong> 23%</li>
+                        <li><strong>Receita/Funcionário:</strong> US$ 400k/ano</li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="alert-box">
-                <h4>💰 Resumo do Fluxo de Caixa</h4>
-                <p><strong>Investimento Inicial:</strong> US$ 40.000 (setup + ramp-up)</p>
-                <p><strong>Receita Líquida Ano 1:</strong> US$ 80.500</p>
-                <p><strong>ROI Anual:</strong> 201% (80.500 ÷ 40.000)</p>
-                <p><strong>Margem de Segurança:</strong> Projeto rentável mesmo com 35% de aumento de custos</p>
+                <h4>💰 Resumo do Fluxo de Caixa Anual</h4>
+                <p><strong>Investimento Inicial:</strong> US$ 105.000 (setup + ramp-up)</p>
+                <p><strong>Receita Líquida Anual:</strong> US$ 966.000</p>
+                <p><strong>ROI Anual:</strong> 820% (966.000 ÷ 105.000 - 100%)</p>
+                <p><strong>Receita Total 12 Meses:</strong> US$ 4.200.000</p>
+                <p><strong>Margem de Segurança:</strong> Projeto rentável mesmo com 40% de aumento de custos</p>
             </div>
         </div>
 

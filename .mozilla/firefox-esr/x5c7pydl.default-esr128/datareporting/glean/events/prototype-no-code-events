@@ -1,0 +1,2 @@
+{"timestamp":164230007,"category":"browser.usage","name":"interaction","extra":{"widget_id":"Browser:Reload","flow_id":"{5ea0e1de-e104-47b7-b2f8-98064b219e5e}","source":"keyboard","glean_timestamp":"1758313841458"}}
+{"timestamp":164238044,"category":"browser.usage","name":"interaction","extra":{"flow_id":"{5ea0e1de-e104-47b7-b2f8-98064b219e5e}","widget_id":"printKb","source":"keyboard","glean_timestamp":"1758313849495"}}

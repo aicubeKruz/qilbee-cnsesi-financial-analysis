@@ -2,16 +2,24 @@
 
 ## Descrição do Projeto
 Análise financeira detalhada para licenciamento de 500 unidades Qilbee para o cliente CNSesi.
+**Contrato de 12 meses com pagamentos mensais recorrentes.**
 
 ## Data do Documento
 30 de Abril de 2025
 
 ## Resumo Financeiro
-- **Receita Total:** US$ 350.000 (500 licenças × US$ 700)
-- **Lucro Líquido:** US$ 80.500 (23% de margem)
-- **Custos de Infraestrutura AWS:** US$ 89.000
-- **Custos de Mão de Obra:** US$ 124.500
-- **Impostos:** US$ 56.000 (16%)
+### 💰 Valores Mensais
+- **Receita Mensal:** US$ 350.000 (500 licenças × US$ 700)
+- **Lucro Mensal:** US$ 80.500 (23% de margem)
+- **Custos Infraestrutura AWS:** US$ 89.000/mês
+- **Custos Mão de Obra:** US$ 124.500/mês
+- **Impostos:** US$ 56.000/mês (16%)
+
+### 🏆 Totais Anuais (12 Meses)
+- **Receita Total:** US$ 4.200.000
+- **Lucro Total:** US$ 966.000
+- **ROI Anual:** 820%
+- **Break-even:** 1.3 mês
 
 ## Arquivos Incluídos
 
