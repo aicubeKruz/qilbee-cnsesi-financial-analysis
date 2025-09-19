@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa Completa - Amazon Web Services (AWS) 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #FF9900;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #232F3E, #131A22);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin: -40px -40px 40px -40px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #FF9900;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        .header .date-info {
+            background: rgba(255, 153, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .section {
+            margin: 50px 0;
+        }
+
+        .section h2 {
+            color: #232F3E;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            border-left: 6px solid #FF9900;
+            padding-left: 25px;
+            background: linear-gradient(90deg, #f8f9fa 0%, transparent 100%);
+            padding: 20px 25px;
+            border-radius: 8px;
+        }
+
+        .section h3 {
+            color: #FF9900;
+            font-size: 1.6em;
+            margin: 30px 0 15px 0;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+
+        .section h4 {
+            color: #232F3E;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #FF9900;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .info-card h4 {
+            color: #232F3E;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-card .icon {
+            background: #FF9900;
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-size: 1.1em;
+            min-width: 35px;
+            text-align: center;
+        }
+
+        .services-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .services-table th,
+        .services-table td {
+            padding: 18px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .services-table th {
+            background: linear-gradient(135deg, #232F3E, #131A22);
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .services-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .services-table tr:hover {
+            background-color: #fff3cd;
+            transform: scale(1.01);
+            transition: all 0.2s ease;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #FF9900, #E67E22);
+            color: white;
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 10px 25px rgba(255, 153, 0, 0.3);
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: none;
+        }
+
+        .highlight-box p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #232F3E, #131A22);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #FF9900;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .regions-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .region-item {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .competitive-analysis {
+            background: #e8f4fd;
+            border: 2px solid #bee3f8;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .competitive-analysis h4 {
+            color: #2b6cb0;
+            margin-bottom: 20px;
+        }
+
+        .trend-item {
+            background: white;
+            border-left: 4px solid #FF9900;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .footer-info {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 50px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <div class="header">
+            <h1>AMAZON WEB SERVICES (AWS)</h1>
+            <div class="subtitle">Pesquisa Completa e Análise Estratégica</div>
+            <div class="date-info">
+                <strong>Data da Pesquisa:</strong> 19 de Setembro de 2025<br>
+                <strong>Fonte:</strong> Site oficial AWS + Análise de mercado
+            </div>
+        </div>
+
+        <!-- Visão Geral da Empresa -->
+        <div class="section">
+            <h2>1. Visão Geral da Amazon Web Services</h2>
+            
+            <div class="highlight-box">
+                <h3>Definição Oficial</h3>
+                <p><strong>"Amazon Web Services offers reliable, scalable, and inexpensive cloud computing services. Free to join, pay only for what you use."</strong></p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4><span class="icon">🏢</span>Empresa Mãe</h4>
+                    <p><strong>Amazon.com, Inc.</strong> - Uma das maiores empresas de tecnologia do mundo, fundada por Jeff Bezos em 1994.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">📅</span>Fundação da AWS</h4>
+                    <p><strong>2006</strong> - Lançada inicialmente com Amazon S3 (Simple Storage Service) e Amazon EC2 (Elastic Compute Cloud).</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">🎯</span>Missão</h4>
+                    <p>Ser a plataforma de nuvem mais abrangente e amplamente adotada do mundo, oferecendo mais de 200 serviços completos.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">🏆</span>Posição no Mercado</h4>
+                    <p><strong>Líder Global</strong> - Gartner nomeia AWS como líder em Cloud Platform Services por 15 anos consecutivos (2025).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Números e Estatísticas -->
+        <div class="section">
+            <h2>2. Números e Estatísticas Principais</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="number">200+</span>
+                    <div>Serviços Disponíveis</div>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="number">245</span>
+                    <div>Países e Territórios Atendidos</div>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="number">33</span>
+                    <div>Regiões Geográficas</div>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="number">105</span>
+                    <div>Availability Zones</div>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="number">32%</span>
+                    <div>Market Share Global (2025)</div>
+                </div>
+                
+                <div class="stat-card">
+                    <span class="number">$90.7B</span>
+                    <div>Receita Anual 2024</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Principais Categorias de Serviços -->
+        <div class="section">
+            <h2>3. Principais Categorias de Serviços</h2>
+            
+            <table class="services-table">
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Principais Serviços</th>
+                        <th>Descrição</th>
+                        <th>Casos de Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Inteligência Artificial</strong></td>
+                        <td>Amazon Bedrock, Nova, SageMaker, Amazon Q</td>
+                        <td>Plataforma completa para IA generativa e machine learning</td>
+                        <td>Chatbots, análise de dados, automação</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Compute</strong></td>
+                        <td>EC2, Lambda, ECS, EKS</td>
+                        <td>Poder computacional escalável para qualquer workload</td>
+                        <td>Servidores virtuais, serverless, containers</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Storage</strong></td>
+                        <td>S3, EBS, EFS, FSx</td>
+                        <td>Armazenamento objeto, bloco e arquivo para qualquer escala</td>
+                        <td>Backup, data lakes, arquivos compartilhados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Databases</strong></td>
+                        <td>Aurora, RDS, DynamoDB, DocumentDB</td>
+                        <td>Bancos relacionais e NoSQL totalmente gerenciados</td>
+                        <td>Aplicações web, analytics, IoT</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Networking</strong></td>
+                        <td>VPC, CloudFront, Route 53, ELB</td>
+                        <td>Rede global segura e de alta performance</td>
+                        <td>CDN, DNS, balanceamento de carga</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Security</strong></td>
+                        <td>IAM, GuardDuty, Shield, Inspector</td>
+                        <td>Segurança multicamadas e compliance</td>
+                        <td>Gestão de identidades, proteção DDoS</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Analytics</strong></td>
+                        <td>Redshift, Athena, QuickSight, EMR</td>
+                        <td>Análise de big data e business intelligence</td>
+                        <td>Data warehouse, dashboards, ETL</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Developer Tools</strong></td>
+                        <td>CodeCommit, CodeBuild, CodeDeploy, Q Developer</td>
+                        <td>Ferramentas completas para desenvolvimento</td>
+                        <td>CI/CD, versionamento, deployment</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Infraestrutura Global -->
+        <div class="section">
+            <h2>4. Infraestrutura Global</h2>
+            
+            <h3>🌍 Regiões Principais</h3>
+            <div class="regions-list">
+                <div class="region-item">🇺🇸 US East (N. Virginia)</div>
+                <div class="region-item">🇺🇸 US West (Oregon)</div>
+                <div class="region-item">🇺🇸 US West (N. California)</div>
+                <div class="region-item">🇨🇦 Canada (Central)</div>
+                <div class="region-item">🇨🇦 Canada West (Calgary)</div>
+                <div class="region-item">🇲🇽 Mexico (Central)</div>
+                <div class="region-item">🇧🇷 South America (São Paulo)</div>
+                <div class="region-item">🇪🇺 Europe (Ireland)</div>
+                <div class="region-item">🇪🇺 Europe (Frankfurt)</div>
+                <div class="region-item">🇬🇧 Europe (London)</div>
+                <div class="region-item">🇯🇵 Asia Pacific (Tokyo)</div>
+                <div class="region-item">🇸🇬 Asia Pacific (Singapore)</div>
+                <div class="region-item">🇦🇺 Asia Pacific (Sydney)</div>
+                <div class="region-item">🇮🇳 Asia Pacific (Mumbai)</div>
+                <div class="region-item">🇨🇳 China (Beijing/Ningxia)</div>
+                <div class="region-item">🌍 + 18 outras regiões</div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4><span class="icon">🏗️</span>Local Zones</h4>
+                    <p>Infraestrutura de baixa latência próxima aos usuários finais para aplicações que exigem performance extrema.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">🛰️</span>Wavelength</h4>
+                    <p>Computação edge integrada com redes 5G para aplicações ultra-baixa latência.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">🏢</span>Outposts</h4>
+                    <p>Infraestrutura AWS totalmente gerenciada on-premises para workloads híbridos.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">🔒</span>GovCloud</h4>
+                    <p>Regiões isoladas para atender requisitos de compliance do governo americano.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inovações e Tendências 2025 -->
+        <div class="section">
+            <h2>5. Principais Inovações e Tendências 2025</h2>
+            
+            <div class="trend-item">
+                <h4>🤖 Agentic AI Revolution</h4>
+                <p><strong>Nova Era da IA:</strong> AWS está focando heavily em IA agêntica, permitindo que sistemas de IA executem tarefas complexas de forma autônoma. Amazon Bedrock AgentCore representa essa evolução.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h4>🧠 Modelos Nova Foundation</h4>
+                <p><strong>IA Própria:</strong> Lançamento dos modelos Nova, oferecendo "frontier intelligence" com performance de preço líder de mercado, competindo diretamente com OpenAI e Google.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h4>🔄 Transform Service</h4>
+                <p><strong>Modernização Assistida por IA:</strong> Novo serviço que usa IA agêntica para acelerar modernização de workloads .NET, mainframe e VMware.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h4>💼 Amazon Q Business Evolution</h4>
+                <p><strong>Assistente Empresarial:</strong> Aprimoramento significativo do assistente de IA para produtividade empresarial, integrando com sistemas corporativos.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h4>🏗️ Elastic VMware Service (EVS)</h4>
+                <p><strong>Migração VMware:</strong> Novo serviço para executar e modernizar workloads VMware na AWS sem necessidade de replatforming.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h4>🎯 re:Invent 2025</h4>
+                <p><strong>Maior Evento de Cloud:</strong> Foco em liderança estratégica e experiências de cliente elevadas com cloud e tecnologias de IA.</p>
+            </div>
+        </div>
+
+        <!-- Modelo de Negócios e Pricing -->
+        <div class="section">
+            <h2>6. Modelo de Negócios e Estrutura de Preços</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4><span class="icon">💰</span>Pay-as-you-use</h4>
+                    <p><strong>Pagamento por Uso:</strong> Modelo revolucionário onde você paga apenas pelos recursos que realmente utiliza, sem contratos ou taxas antecipadas.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">🆓</span>AWS Free Tier</h4>
+                    <p><strong>Nível Gratuito:</strong> Acesso gratuito a mais de 100 produtos, incluindo $200 em créditos para começar com Amazon Bedrock, EC2 e S3.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">💳</span>Savings Plans</h4>
+                    <p><strong>Planos de Economia:</strong> Descontos de até 72% em troca de compromissos de uso de 1 ou 3 anos.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">📊</span>Cost Calculator</h4>
+                    <p><strong>Calculadora de Custos:</strong> Ferramenta precisa para estimar custos de arquiteturas complexas antes da implementação.</p>
+                </div>
+            </div>
+
+            <h3>💼 Segmentos de Mercado</h3>
+            <table class="services-table">
+                <thead>
+                    <tr>
+                        <th>Segmento</th>
+                        <th>Foco</th>
+                        <th>Principais Ofertas</th>
+                        <th>Características</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Enterprise</strong></td>
+                        <td>Grandes corporações</td>
+                        <td>Security, Compliance, Governance</td>
+                        <td>Contratos customizados, suporte premium</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Startups</strong></td>
+                        <td>Empresas nascentes</td>
+                        <td>AWS Activate, Créditos, Mentoria</td>
+                        <td>Até $100k em créditos, acesso a investidores</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Public Sector</strong></td>
+                        <td>Governo e educação</td>
+                        <td>GovCloud, Compliance especializado</td>
+                        <td>Certificações governamentais</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SMB</strong></td>
+                        <td>Pequenas e médias empresas</td>
+                        <td>Soluções simplificadas, preços competitivos</td>
+                        <td>Fácil migração, suporte consultivo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Análise Competitiva -->
+        <div class="section">
+            <h2>7. Posicionamento Competitivo</h2>
+            
+            <div class="competitive-analysis">
+                <h4>🏆 Vantagens Competitivas da AWS</h4>
+                <ul style="margin: 20px; line-height: 2;">
+                    <li><strong>First-mover advantage:</strong> Pioneira no mercado de cloud pública (2006)</li>
+                    <li><strong>Maior portfólio:</strong> Mais de 200 serviços vs competidores</li>
+                    <li><strong>Infraestrutura global:</strong> Maior presença geográfica mundial</li>
+                    <li><strong>Ecossistema de parceiros:</strong> Mais de 100.000 partners certificados</li>
+                    <li><strong>Inovação contínua:</strong> Lança 3.000+ novos recursos por ano</li>
+                    <li><strong>Enterprise focus:</strong> 15 anos consecutivos como líder no Quadrante Mágico Gartner</li>
+                </ul>
+            </div>
+
+            <table class="services-table">
+                <thead>
+                    <tr>
+                        <th>Provedor</th>
+                        <th>Market Share</th>
+                        <th>Pontos Fortes</th>
+                        <th>Diferenciação AWS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>AWS</strong></td>
+                        <td>32%</td>
+                        <td>Amplitude, maturidade, inovação</td>
+                        <td>Líder absoluto, maior ecossistema</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Microsoft Azure</strong></td>
+                        <td>23%</td>
+                        <td>Integração Office, hybrid cloud</td>
+                        <td>AWS tem mais serviços nativos cloud</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Cloud</strong></td>
+                        <td>11%</td>
+                        <td>AI/ML, data analytics</td>
+                        <td>AWS oferece IA mais abrangente</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alibaba Cloud</strong></td>
+                        <td>4%</td>
+                        <td>Domínio na China</td>
+                        <td>AWS tem presença global superior</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Principais Clientes e Cases de Sucesso -->
+        <div class="section">
+            <h2>8. Principais Clientes e Setores</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4><span class="icon">🏦</span>Financial Services</h4>
+                    <p><strong>Clientes:</strong> Goldman Sachs, Capital One, Nasdaq, Banco Bradesco<br>
+                    <strong>Uso:</strong> Risk analytics, fraud detection, regulatory compliance</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">🏥</span>Healthcare</h4>
+                    <p><strong>Clientes:</strong> Pfizer, Johnson & Johnson, Moderna<br>
+                    <strong>Uso:</strong> Drug discovery, genomics, telemedicine, AI diagnosis</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">🎬</span>Media & Entertainment</h4>
+                    <p><strong>Clientes:</strong> Netflix, Disney, ESPN, Formula 1<br>
+                    <strong>Uso:</strong> Content delivery, live streaming, content analysis</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">🛒</span>Retail</h4>
+                    <p><strong>Clientes:</strong> Unilever, Coca-Cola, McDonald's<br>
+                    <strong>Uso:</strong> Supply chain optimization, personalization, inventory</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">🏛️</span>Government</h4>
+                    <p><strong>Clientes:</strong> CIA, Department of Defense, UK Government<br>
+                    <strong>Uso:</strong> Citizen services, data analytics, cybersecurity</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">🎓</span>Education</h4>
+                    <p><strong>Clientes:</strong> Arizona State University, University of Cambridge<br>
+                    <strong>Uso:</strong> Distance learning, research computing, campus management</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sustentabilidade e Responsabilidade -->
+        <div class="section">
+            <h2>9. Sustentabilidade e Responsabilidade Social</h2>
+            
+            <div class="highlight-box">
+                <h3>🌱 Compromisso com o Clima</h3>
+                <p><strong>Net Zero até 2040:</strong> AWS se comprometeu a atingir emissões líquidas zero de carbono até 2040, 10 anos antes do Acordo de Paris.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4><span class="icon">⚡</span>Energia Renovável</h4>
+                    <p><strong>100% Renovável até 2025:</strong> Meta de usar 100% de energia renovável para todas as operações da AWS.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">💧</span>Water Stewardship</h4>
+                    <p><strong>Water Positive até 2030:</strong> Retornar mais água para as comunidades do que usa em operações diretas.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">📚</span>Educação</h4>
+                    <p><strong>29 milhões treinados:</strong> Meta de treinar 29 milhões de pessoas em habilidades de cloud até 2025.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">🔬</span>Pesquisa</h4>
+                    <p><strong>Climate Pledge Fund:</strong> $10 bilhões investidos em tecnologias para sustentabilidade e descarbonização.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Perspectivas Futuras -->
+        <div class="section">
+            <h2>10. Perspectivas e Tendências Futuras</h2>
+            
+            <div class="trend-item">
+                <h4>🚀 Quantum Computing</h4>
+                <p><strong>Amazon Braket:</strong> Desenvolvimento de computação quântica como serviço, preparando-se para a próxima revolução computacional.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h4>🛰️ Satellite Constellation</h4>
+                <p><strong>Project Kuiper:</strong> Constelação de 3.236 satélites para levar internet banda larga para áreas remotas mundialmente.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h4>🏭 Industrial IoT</h4>
+                <p><strong>AWS IoT + Edge:</strong> Expansão massiva em IoT industrial, smart cities e manufatura 4.0.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h4>🧬 Genomics & Life Sciences</h4>
+                <p><strong>AWS HealthLake:</strong> Plataforma especializada para dados de saúde, acelerando pesquisas médicas e tratamentos personalizados.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h4>🌐 Multi-Cloud & Hybrid</h4>
+                <p><strong>AWS Outposts Family:</strong> Expansão de soluções híbridas e multi-cloud para atender necessidades específicas de compliance.</p>
+            </div>
+        </div>
+
+        <!-- Informações de Contato e Investimentos -->
+        <div class="section">
+            <h2>11. Informações Corporativas</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4><span class="icon">💼</span>CEO & Liderança</h4>
+                    <p><strong>CEO:</strong> Matt Garman (desde 2024)<br>
+                    <strong>Fundador:</strong> Jeff Bezos<br>
+                    <strong>Employees:</strong> 1.5+ milhão (Amazon total)</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">📊</span>Performance Financeira</h4>
+                    <p><strong>Receita 2024:</strong> $90.7 bilhões<br>
+                    <strong>Crescimento:</strong> 13% YoY<br>
+                    <strong>Operating Income:</strong> $24.6 bilhões</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">🏢</span>Headquarters</h4>
+                    <p><strong>Sede:</strong> Seattle, Washington, EUA<br>
+                    <strong>Offices:</strong> 25+ países<br>
+                    <strong>Data Centers:</strong> 105 Availability Zones</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4><span class="icon">📈</span>Investimentos</h4>
+                    <p><strong>CapEx 2024:</strong> $75+ bilhões<br>
+                    <strong>R&D:</strong> $85+ bilhões anuais<br>
+                    <strong>Foco:</strong> IA, infraestrutura, sustentabilidade</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="footer-info">
+            <h3>📋 Resumo da Pesquisa</h3>
+            <p><strong>Amazon Web Services</strong> continua sendo a força dominante no mercado de cloud computing em 2025, com foco intenso em <strong>Inteligência Artificial Agêntica</strong>, expansão global da infraestrutura e compromissos ambiciosos de sustentabilidade.</p>
+            <br>
+            <p>A empresa mantém sua posição de liderança através de inovação contínua, o mais abrangente portfólio de serviços da indústria, e um ecossistema global de parceiros sem precedentes.</p>
+            <br>
+            <p><em>Pesquisa realizada em 19/09/2025 com base em fontes oficiais e análise de mercado atualizada.</em></p>
+        </div>
+    </div>
+
+    <script>
+        // Adicionar interatividade aos cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.info-card, .stat-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                    this.style.transition = 'all 0.3s ease';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Animação de contagem para os números
+            const statNumbers = document.querySelectorAll('.number');
+            statNumbers.forEach(number => {
+                const finalValue = number.textContent;
+                let currentValue = 0;
+                const increment = finalValue.match(/\d+/) ? parseInt(finalValue.match(/\d+/)[0]) / 50 : 1;
+                
+                const counter = setInterval(() => {
+                    currentValue += increment;
+                    if (currentValue >= parseInt(finalValue.match(/\d+/)[0])) {
+                        number.textContent = finalValue;
+                        clearInterval(counter);
+                    } else {
+                        number.textContent = Math.floor(currentValue) + finalValue.replace(/\d+/, '');
+                    }
+                }, 30);
+            });
+        });
+    </script>
+</body>
+</html>
