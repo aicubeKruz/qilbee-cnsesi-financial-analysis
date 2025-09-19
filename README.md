@@ -17,6 +17,14 @@ Análise financeira detalhada para licenciamento de 500 unidades Qilbee para o c
 
 ### 1. planejamento_financeiro_qilbee_cnsesi.html
 **Documento principal** - Análise completa para o time financeiro contendo:
+
+### 2. planejamento_financeiro_qilbee_cnsesi.pdf
+**Versão PDF** - Documento formatado para impressão e distribuição executiva
+
+### 3. apresentacao_qilbee_cnsesi.html
+Apresentação comercial original (para referência)
+
+## Detalhamento do Documento Principal
 - Breakdown detalhado de custos
 - Análise de infraestrutura AWS por serviço
 - Detalhamento de recursos humanos por função
@@ -25,8 +33,7 @@ Análise financeira detalhada para licenciamento de 500 unidades Qilbee para o c
 - KPIs críticos
 - Cronograma de desembolso
 
-### 2. apresentacao_qilbee_cnsesi.html
-Apresentação comercial original (para referência)
+
 
 ## Principais Componentes de Custo
 
