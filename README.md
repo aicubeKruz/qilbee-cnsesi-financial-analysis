@@ -32,6 +32,9 @@ Análise financeira detalhada para licenciamento de 500 unidades Qilbee para o c
 ### 3. apresentacao_qilbee_cnsesi.html
 Apresentação comercial original (para referência)
 
+### 4. pesquisa_aws_2025.html
+**Pesquisa Completa sobre Amazon Web Services** - Análise estratégica abrangente da AWS
+
 ## Detalhamento do Documento Principal
 - Breakdown detalhado de custos
 - Análise de infraestrutura AWS por serviço
